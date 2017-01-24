@@ -1,0 +1,27 @@
+extends ../layoutUsers
+
+block content
+  h1.text-center Mis Imágenes
+  table.table.table-striped.table-hover
+    thead
+      tr
+        th.text-center 
+        th.text-center ID
+        th.text-center Titulo
+        th.text-center Editar
+        th.text-center Eliminar
+    tbody
+    - each image in images
+      tr
+        td.text-center.align-middle
+          img.text-center.img-thumbnail(style="height:30px" src="/users_images/#{image._id}.#{image.extension}" alt="#{image.title}")
+        td.text-center.va-middle= image._id
+        td.text-center.va-middle= image.title
+        td.text-center.va-middle
+          a(href="imagenes/#{image._id}/edit")
+            span.glyphicon.glyphicon-edit
+        td.text-center.va-middle
+          form(action="/users/imagenes/#{image._id}?_method=DELETE" method="POST")
+           input.btn.btn-link(type="submit" value="Eliminar")
+          //a(href="imagenes/#{image._id}/delete")
+            //span.glyphicon.glyphicon-remove  

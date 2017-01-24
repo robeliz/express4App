@@ -1,0 +1,20 @@
+extends ../layoutUsers
+
+block content
+  h1.text-center= title
+  p.text-center Subir nueva imagen
+
+  div.col-md-offset-4.col-md-4
+    form(action="/users/imagenes", method="POST" enctype="multipart/form-data")
+      div.form-group
+        label(for="title") Título
+        input.form-control(type="text", id="title", name="title", placeholder="Título de la imagen")
+      div.form-group
+        label(for="file") Imagen
+        input.form-control(type="file", id="file", name="file")
+      //if (error!='') 
+        //div.alert.alert-danger(role=alert) 
+          //span.glyphicon.glyphicon-alert.margin-icon-right
+          //span #{error}
+      div.form-group
+        button.btn.btn-info(type="sumbit", value="Enviar") Enviar

@@ -1,0 +1,30 @@
+doctype html
+html(lang="es")
+  head
+    title= title
+    meta(charset="UTF-8")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css')
+    script(src="https://code.jquery.com/jquery-3.1.1.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+  body
+    nav.navbar.navbar-default.navbar-fixed-top
+      div.container-fluid
+        div.navbar-header
+          a.navbar-brand(href="/users") Express 4
+        div.collapse.navbar-collapse
+          ul.nav.navbar-nav
+          ul.nav.navbar-nav.navbar-right
+            li.divider(role="separator")
+            li
+              a(href="/users/imagenes") Mis Imagenes
+            li.divider(role="separator")
+            li
+              a(href="/users/imagenes/new") Subir imagen
+            li.divider(role="separator")
+            li
+              a(href="/signup") Cerrar sesión
+            li.divider(role="separator")
+    div.container-fluid
+      block content

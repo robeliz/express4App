@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1.text-center= title
+  p.text-center Introduce tus datos para el registro
+  div.col-md-offset-4.col-md-4
+    form(action="/register", method="POST" )
+      div.form-group
+        label(for="username") Username
+        input.form-control(type="text", id="username", name="username", placeholder="Username")
+        if(existErrors===true)
+          if (errors[0].name)
+            div.alert.alert-danger(role=alert) #{errors[0].msg}
+      div.form-group
+        label(for="email") Email
+        input.form-control(type="text", id="email", name="email", placeholder="Email")
+        if(existErrors===true)
+          if (errors[2].name)
+            div.alert.alert-danger(role=alert) #{errors[2].msg}
+      div.form-group
+        label(for="password") Password
+        input.form-control(type="password", id="password", name="password", placeholder="*****")
+      div.form-group
+        label(for="password_confirmation") Confirma tu Password
+        input.form-control(type="password", id="password_confirmation", name="password_confirmation", placeholder="*****")
+        if(existErrors===true)
+          if (errors[1].name)
+            div.alert.alert-danger(role=alert) #{errors[1].msg}
+      div.form-group
+        button.btn.btn-info(type="sumbit", value="Enviar") Enviar

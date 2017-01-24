@@ -1,0 +1,7 @@
+extends ../layoutUsers
+
+block content
+  h1.text-center= image.title
+  p.text-center= image.creator.email
+  div.text-center
+    img.text-center.img-thumbnail(src="/users_images/#{image._id}.#{image.extension}")

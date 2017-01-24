@@ -1,0 +1,20 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.margin-icon-left{
+	margin-left:5px;
+}
+
+.margin-icon-right{
+	margin-right:5px;
+}
+
+.va-middle{
+	vertical-align: middle !important;
+}

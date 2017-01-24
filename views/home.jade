@@ -1,0 +1,14 @@
+extends layoutUsers
+
+block content
+  h1.text-right= title
+  p.text-right Buenas #{user.username}
+  hr
+  
+  for image in images
+    div.row.text-center
+      h2.text-center= image.title
+      div.text-center
+        img.text-center.img-thumbnail(src="/users_images/#{image._id}.#{image.extension}")
+      p.text-center= image.creator.email
+      hr
